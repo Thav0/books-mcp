@@ -19,7 +19,9 @@
     "@huggingface/transformers": "^4.2.0",
     "@langchain/core": "^1.2.11",
     "@langchain/textsplitters": "^1.0.1",
+    "@modelcontextprotocol/server": "^2.0.0",
     "adm-zip": "^0.6.1",
-    "sqlite-vec": "^0.1.9"
+    "sqlite-vec": "^0.1.9",
+    "zod": "^4.6.5"
   }
 }
