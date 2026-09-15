@@ -72,10 +72,14 @@ The first `embed` run downloads `nomic-embed-text-v1.5` (a few hundred MB) into 
 ## Use from Claude Code
 
 ```bash
-claude mcp add product-books -- node "$(pwd)/src/server.ts"
+claude mcp add --transport stdio --scope user product-books -- "$(which node)" "$(pwd)/src/server.ts"
 ```
 
-Restart Claude Code, then ask a question about your books. The tool returns passages with book, chapter path and, for audio, a timestamp.
+`--scope user` registers the tool for every Claude Code session on this machine, not just this repo, since you never actually ask about your books from inside this repo. Skills and anything else built from the books live in whichever project you're working in, not here.
+
+Claude Code spawns `node` from its own `PATH`. If your default is older than 22.18, it can't strip TypeScript's types and the server dies on start silently, use the absolute path to a Node 24 binary instead of `$(which node)` if that happens.
+
+Restart Claude Code (or open a new session anywhere), then ask a question about your books. The tool returns passages with book, chapter path and, for audio, a timestamp.
 
 ## Status
 
@@ -83,9 +87,8 @@ Restart Claude Code, then ask a question about your books. The tool returns pass
 | --- | --- |
 | parse to markdown | done |
 | chunk at headings | done |
-| embed, store, hybrid search | in progress |
-| MCP server | planned |
-| skills grounded in the books | planned |
+| embed, store, hybrid search | done, recall@5 = 9/10 |
+| MCP server | done |
 
 The detailed plan, with every decision and why, is in `plans/260915-2036-product-books-rag/plan.md`.
 
