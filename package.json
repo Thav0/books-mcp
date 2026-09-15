@@ -16,8 +16,10 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
     "@langchain/core": "^1.2.11",
     "@langchain/textsplitters": "^1.0.1",
-    "adm-zip": "^0.6.1"
+    "adm-zip": "^0.6.1",
+    "sqlite-vec": "^0.1.9"
   }
 }
