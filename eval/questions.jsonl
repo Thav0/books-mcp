@@ -8,3 +8,13 @@
 {"question": "why do output-focused roadmaps lead companies into the build trap", "book": "escaping-the-build-trap"}
 {"question": "what is the one metric that matters", "book": "lean-analytics"}
 {"question": "why are vanity metrics misleading for a startup", "book": "lean-analytics"}
+{"question": "how do quorum reads and writes work in leaderless replication", "book": "designing-data-intensive-applications", "heading": "replication"}
+{"question": "what is write skew and why does snapshot isolation not prevent it", "book": "designing-data-intensive-applications", "heading": "transactions"}
+{"question": "token bucket versus sliding window algorithms for an API rate limiter", "book": "system-design-interview", "heading": "rate limiting"}
+{"question": "fanout on write versus fanout on read for a news feed", "book": "system-design-interview", "heading": "fanout"}
+{"question": "what forces push a service to be split and what forces keep it together", "book": "software-architecture-the-hard-parts", "heading": "granularity"}
+{"question": "how do transactional sagas handle compensating updates when a step fails", "book": "software-architecture-the-hard-parts", "heading": "saga"}
+{"question": "how do you identify architecture characteristics from requirements and domain concerns", "book": "fundamentals-of-software-architecture", "heading": "characteristics"}
+{"question": "difference between broker and mediator topologies in event-driven architecture", "book": "fundamentals-of-software-architecture", "heading": "event-driven"}
+{"question": "what is an architectural fitness function", "book": "building-evolutionary-architectures", "heading": "fitness function"}
+{"question": "how can a database schema evolve safely using the expand and contract pattern", "book": "building-evolutionary-architectures"}
