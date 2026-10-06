@@ -7,6 +7,25 @@ import type { Chunk } from "./chunk.ts";
 
 const BATCH = 16;
 
+function formatSeconds(seconds: number): string {
+  const s = Math.round(seconds);
+  return s >= 60 ? `${Math.floor(s / 60)}m${String(s % 60).padStart(2, "0")}s` : `${s}s`;
+}
+
+// One line redrawn in place: bar, count, percent, elapsed and time left at the current rate.
+// The first batch also loads the model, so the estimate settles after the first minute.
+function drawProgress(slug: string, done: number, total: number, startedAt: number): void {
+  const width = 30;
+  const ratio = total ? done / total : 1;
+  const filled = Math.round(ratio * width);
+  const elapsed = (performance.now() - startedAt) / 1000;
+  const left = done ? (elapsed / done) * (total - done) : 0;
+  const eta = done ? `~${formatSeconds(left)} left` : "loading model";
+  process.stderr.write(
+    `\r${slug} [${"#".repeat(filled)}${"-".repeat(width - filled)}] ${done}/${total} ${Math.floor(ratio * 100)}% ${formatSeconds(elapsed)} elapsed, ${eta}   `,
+  );
+}
+
 async function listChunkFiles(onlySlug?: string): Promise<{ slug: string; path: string }[]> {
   const names = (await readdir(DATA_CHUNKS)).filter((n) => n.endsWith(".jsonl"));
   return names
@@ -38,6 +57,8 @@ export async function embedBook(db: ReturnType<typeof openDatabase>, slug: strin
     }
     db.prepare("delete from chunks where book = ?").run(slug);
 
+    const startedAt = performance.now();
+    drawProgress(slug, 0, chunks.length, startedAt);
     for (let start = 0; start < chunks.length; start += BATCH) {
       const batch = chunks.slice(start, start + BATCH);
       const vectors = await embedDocuments(batch.map((c) => `${c.headings.join(" > ")}\n\n${c.text}`));
@@ -47,7 +68,7 @@ export async function embedBook(db: ReturnType<typeof openDatabase>, slug: strin
         insertVec.run(c.id, vectors[i]!);
         insertFts.run(c.id, headings, c.text);
       });
-      process.stderr.write(`\r${slug}: ${Math.min(start + BATCH, chunks.length)}/${chunks.length}`);
+      drawProgress(slug, Math.min(start + BATCH, chunks.length), chunks.length, startedAt);
     }
     db.exec("commit");
     process.stderr.write("\n");
