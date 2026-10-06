@@ -30,13 +30,13 @@ A local RAG pipeline over copyrighted product books, served to Claude Code as an
 pnpm typecheck
 node src/ingest/chunk.ts [slug]
 node src/ingest/embed.ts [slug]       # step 3a
-node src/query.ts "question"          # step 3b, 3c
+node src/query.ts "question" [shelf or book]   # shelf: product, system-design
 node src/eval.ts                      # step 3d
 ```
 
 ## Current step
 
-Step 6 (publish) is the only step left. Steps 0-4 are done, step 5 moved out of this repo: skills are written in the projects that consume the tool, never here. The MCP server is registered at user scope, so any Claude Code session on this machine gets `search_product_knowledge` at start, no daemon needed (`claude mcp get product-books` shows scope and status). Step 3 baseline recall@5 = 9/10 both modes (see plan.md).
+Step 7 (system design shelf, five books, `search_system_design_knowledge`) is done: recall@5 18/20 in both modes, 9/10 per shelf. Step 6 (publish) is still open. Steps 0-4 are done, step 5 moved out of this repo: skills are written in the projects that consume the tool, never here. The MCP server is registered at user scope, so any Claude Code session on this machine gets `search_product_knowledge` at start, no daemon needed (`claude mcp get product-books` shows scope and status). Step 3 baseline recall@5 = 9/10 both modes (see plan.md).
 
 ## Skills worth using here
 
