@@ -18,3 +18,19 @@
 {"question": "difference between broker and mediator topologies in event-driven architecture", "book": "fundamentals-of-software-architecture", "heading": "event-driven"}
 {"question": "what is an architectural fitness function", "book": "building-evolutionary-architectures", "heading": "fitness function"}
 {"question": "how can a database schema evolve safely using the expand and contract pattern", "book": "building-evolutionary-architectures"}
+{"question": "how do I estimate daily active users, storage and bandwidth with a back of the envelope calculation", "book": "grokking-system-design-interview", "heading": "back-of-the-envelope"}
+{"question": "what is the difference between functional and non-functional requirements in a design interview", "book": "grokking-system-design-interview", "heading": "non-functional"}
+{"question": "how does consistent hashing limit data movement when a node joins or leaves", "book": "grokking-system-design-interview", "heading": "consistent hashing"}
+{"question": "why can a bloom filter return false positives but never false negatives", "book": "grokking-system-design-interview", "heading": "bloom filters"}
+{"question": "when should I choose a token bucket over a leaky bucket", "book": "grokking-system-design-interview", "heading": "token bucket"}
+{"question": "should clients call services directly or go through an API gateway", "book": "grokking-system-design-interview", "heading": "api gateway vs direct"}
+{"question": "polling versus long polling versus websockets versus webhooks", "book": "grokking-system-design-interview", "heading": "webhooks"}
+{"question": "how do I structure my answer in a system design interview step by step", "book": "grokking-system-design-interview", "heading": "step by step"}
+{"question": "why do we need a heartbeat in a cluster", "book": "grokking-system-design-interview", "heading": "heartbeat"}
+{"question": "which cache eviction policy should I use", "book": "grokking-system-design-interview", "heading": "caching"}
+{"question": "design a url shortener with unique key generation", "book": "grokking-system-design-interview", "heading": "tinyurl"}
+{"question": "design an API rate limiter for a public API", "book": "grokking-system-design-interview", "heading": "rate limiter"}
+{"question": "design search autocomplete suggestions as the user types", "book": "grokking-system-design-interview", "heading": "typeahead"}
+{"question": "design a web crawler that avoids fetching duplicate pages", "book": "grokking-system-design-interview", "heading": "web crawler"}
+{"question": "design ticket booking so two users cannot buy the same seat", "book": "grokking-system-design-interview", "heading": "ticketmaster"}
+{"question": "design a ride sharing backend that matches drivers and riders", "book": "grokking-system-design-interview", "heading": "uber"}
