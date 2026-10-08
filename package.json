@@ -2,7 +2,7 @@
   "name": "product-books-mcp",
   "version": "0.1.0",
   "private": true,
-  "description": "Local RAG over product engineering books, exposed to Claude as an MCP server",
+  "description": "A local search index for knowledge you own, served to AI tools through MCP",
   "type": "module",
   "engines": {
     "node": ">=24"
