@@ -19,6 +19,12 @@ const TOOLS: { name: string; shelf: Shelf; description: string }[] = [
     description:
       "Search a local library of system design and software architecture books. Returns the most relevant passages with book and chapter path. Use it whenever a question touches distributed systems, databases, replication, partitioning, transactions, caching, messaging, stream processing, architecture styles and trade-offs, or system design interview problems.",
   },
+  {
+    name: "search_grokking_knowledge",
+    shelf: "grokking",
+    description:
+      "Search the Grokking the System Design Interview course: the interview framework, back-of-the-envelope estimation, short glossary lessons (load balancing, caching, partitioning, indexes, CAP, consistent hashing, bloom filters, quorum, heartbeat), 'A versus B' trade-off lessons, and step by step designs of TinyURL, Pastebin, Instagram, Dropbox, Messenger, Twitter, YouTube, typeahead, API rate limiter, web crawler, news feed, Yelp, Uber and Ticketmaster. Returns the most relevant passages with course section, lesson and heading path. Use it for system design interview questions and when asked how this course approaches a design problem.",
+  },
 ];
 
 serveStdio(() => {
