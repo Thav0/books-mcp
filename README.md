@@ -2,9 +2,30 @@
 
 A local search index for knowledge you own, served to AI tools through MCP.
 
-Put in books, courses, talks or notes, and the pipeline builds a search index from them on your machine. Claude Code, or any other MCP client, can then ask "how does Shape Up define appetite?" and get back the passages that answer it, with the source and the chapter path. No text leaves your computer.
+Put in books, courses, talks or notes, and the pipeline builds a search index from them on your machine. Claude Code, or any other MCP client, can then ask "how does Shape Up define appetite?" and get back the passages that answer it, with the source and the chapter path. Your files are never uploaded.
 
 It started as a tool for product engineering books. Today it works for any text that is useful to you: if you can turn it into Markdown with headings, it can go in.
+
+## Why use it
+
+- **Your sources stay yours.** Parsing, indexing and search all run on your machine, with no API keys and no upload. The only text that reaches a model is the few passages a search returns.
+- **Answers you can check.** Every passage comes with its source and chapter path, and with a timestamp for audio. The model can cite it, and you can open the original at the right place.
+- **A small prompt, not a whole book.** The model gets about five passages of up to 800 tokens each, so the answer stays focused and the cost stays low.
+- **Knowledge the model does not have.** Private, new or niche material, such as your own books, course notes or internal documents, becomes something an AI tool can use.
+- **It finds the idea and the exact word.** Vector search catches a paraphrase, and full-text search catches an exact term such as a name or an acronym. The two rankings are merged.
+- **One index, many tools.** Build it once, and every MCP client, script or program can use it. The data is in open formats, JSONL and SQLite.
+- **Easy to run and to grow.** It is one SQLite file with no daemon and no vector database server. Shelves keep subjects apart, and the eval and snapshot checks show if a new source made the old ones worse.
+
+## Ways to use it
+
+- **Ask your library.** In Claude Code or another MCP client, ask "how does Shape Up define appetite?" and get the passage, the chapter and the source back.
+- **Ground what you write in sources.** Write lessons, summaries, study notes or documentation that cite a book and a chapter instead of the model's memory. The author writes study lessons in another project that call the search tool for the passages they need.
+- **Compare sources.** Ask the same question once per book with the `book` option, then compare what each one says.
+- **Study from a course or a talk.** Index lecture subtitles and saved course pages, then ask questions, ask for a quiz, or find the moment in a recording, because audio results carry a timestamp.
+- **Search your own notes and documents.** Meeting transcripts, runbooks, design documents or saved web pages are searchable as soon as they are Markdown. It is a single-user tool, so each person runs their own copy.
+- **Build on top of it.** Read the JSONL chunks in your own scripts, for example to make flashcards or a static site, or import the search functions into an app. A skill or an agent can be grounded in one method book by calling the tool for the passages it needs.
+
+The technical routes are in "Let other tools use the knowledge" below.
 
 ## How it works
 
@@ -17,7 +38,7 @@ pdf / epub / srt / any text  ->  markdown with headings  ->  chunks (jsonl)  -> 
 3. **Embed and store.** Each chunk gets a vector from a local embedding model and a row in a full-text index. Both live in one SQLite file.
 4. **Serve.** An MCP server offers one search tool per shelf. A shelf is a group of sources, for example "product books" or "system design". A search only looks inside its shelf, so a new subject does not compete with the old ones for the top results.
 
-Everything runs on your machine. There are no API keys, no daemon and no vector database server. The folder `data/` is gitignored, so your sources never reach git.
+The whole pipeline and the server run on your machine. There are no API keys, no daemon and no vector database server. The folder `data/` is gitignored, so your sources never reach git.
 
 New to RAG? Read [docs/rag-primer.md](docs/rag-primer.md) first.
 
@@ -127,6 +148,7 @@ Adding a source can move the results of the shelves you already use, because the
 
 - Only text is indexed. Images and diagrams are not searched.
 - The tool returns passages, not answers. The model that calls it writes the answer.
+- The passages a search returns are sent to the model you use. With a cloud model, its provider receives those passages as part of the conversation.
 - The embedding model is fixed to `nomic-embed-text-v1.5`. Its name is one constant in `src/embedding.ts`, and changing it means embedding every source again.
 - It is a single-user tool for one machine. There are no accounts and no sharing.
 
