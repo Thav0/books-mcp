@@ -98,6 +98,8 @@ This is also why step 4 registers the server at user scope: the consumer repo is
 
 Only after step 4 is accepted. Checklist: MIT `LICENSE`, `README.md` already written, confirm `git ls-files` contains nothing from `data/`, `eval/questions.jsonl` holds questions and chapter titles only, `pnpm typecheck` clean, tag `v0.1.0`. Anyone cloning brings their own books; the repo ships the pipeline, not the corpus.
 
+Status 2026-10-08: the repo is public at https://github.com/Thav0/books-mcp (15 commits at the first push, 33 files, nothing from `data/`, no secret patterns in the history). The README was rewritten for any source, with the benefits and the ways to use it, and the MIT `LICENSE` was added. `git ls-files data` is empty, `eval/questions.jsonl` holds questions and lesson or chapter titles only, and `pnpm typecheck` is clean. Open: the `v0.1.0` tag.
+
 ### 7. System design shelf. Done
 
 Added 2026-09-30: five system design books (`designing-data-intensive-applications`, `system-design-interview`, `fundamentals-of-software-architecture`, `software-architecture-the-hard-parts`, `building-evolutionary-architectures`), all PDFs through Marker since the EPUB copies were removed the same evening, go through the same pipeline, to ground daily study lessons generated in a consumer repo. Blocks and checks: `plans/260930-1845-system-design-shelf/instructions.md`. Open decision: split search into a second MCP tool (`search_system_design_knowledge`) or add a shelf filter, so product searches without a `book` filter stay clean. Accepted when the row counts match the jsonl line counts for all five books and a replication question returns DDIA hits.
