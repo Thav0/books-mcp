@@ -1,0 +1,50 @@
+{"query": "consistent hashing and virtual nodes", "shelf": "system-design"}
+{"query": "leader election in a distributed system", "shelf": "system-design"}
+{"query": "write-ahead log and crash recovery", "shelf": "system-design"}
+{"query": "database sharding strategies and hot partitions", "shelf": "system-design"}
+{"query": "cache invalidation strategies", "shelf": "system-design"}
+{"query": "conflict resolution with eventual consistency", "shelf": "system-design"}
+{"query": "two-phase commit versus saga", "shelf": "system-design"}
+{"query": "load balancing algorithms round robin least connections", "shelf": "system-design"}
+{"query": "message queue delivery guarantees at least once", "shelf": "system-design"}
+{"query": "idempotent operations and retries", "shelf": "system-design"}
+{"query": "CAP theorem trade-offs", "shelf": "system-design"}
+{"query": "SQL versus NoSQL database choice", "shelf": "system-design"}
+{"query": "replication lag and read your own writes", "shelf": "system-design"}
+{"query": "bloom filter false positives", "shelf": "system-design"}
+{"query": "rate limiting algorithms", "shelf": "system-design"}
+{"query": "event sourcing and CQRS", "shelf": "system-design"}
+{"query": "microservice granularity and service boundaries", "shelf": "system-design"}
+{"query": "service discovery and health checks", "shelf": "system-design"}
+{"query": "circuit breaker and fault tolerance", "shelf": "system-design"}
+{"query": "API gateway versus load balancer", "shelf": "system-design"}
+{"query": "B-tree versus LSM-tree storage engines", "shelf": "system-design"}
+{"query": "batch processing versus stream processing", "shelf": "system-design"}
+{"query": "back of the envelope capacity estimation", "shelf": "system-design"}
+{"query": "design a URL shortener", "shelf": "system-design"}
+{"query": "design a news feed", "shelf": "system-design"}
+{"query": "design a chat messaging system", "shelf": "system-design"}
+{"query": "design a web crawler", "shelf": "system-design"}
+{"query": "design autocomplete typeahead", "shelf": "system-design"}
+{"query": "heartbeat failure detection", "shelf": "system-design"}
+{"query": "quorum reads and writes", "shelf": "system-design"}
+{"query": "opportunity solution tree", "shelf": "product"}
+{"query": "product discovery interviews", "shelf": "product"}
+{"query": "appetite and the betting table", "shelf": "product"}
+{"query": "outcomes versus outputs", "shelf": "product"}
+{"query": "north star metric", "shelf": "product"}
+{"query": "vanity metrics versus actionable metrics", "shelf": "product"}
+{"query": "product risks value usability feasibility viability", "shelf": "product"}
+{"query": "empowered product teams versus feature teams", "shelf": "product"}
+{"query": "roadmap prioritisation", "shelf": "product"}
+{"query": "objectives and key results", "shelf": "product"}
+{"query": "weekly touchpoints with customers", "shelf": "product"}
+{"query": "assumption testing and experiments", "shelf": "product"}
+{"query": "the build trap and feature factories", "shelf": "product"}
+{"query": "story-based customer interviews", "shelf": "product"}
+{"query": "minimum viable product", "shelf": "product"}
+{"query": "cohort analysis and retention", "shelf": "product"}
+{"query": "pricing experiments", "shelf": "product"}
+{"query": "stakeholder management", "shelf": "product"}
+{"query": "product strategy and vision", "shelf": "product"}
+{"query": "circuit breaker and scope hammering in shaping", "shelf": "product"}

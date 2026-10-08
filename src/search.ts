@@ -67,7 +67,7 @@ function toFtsQuery(text: string): string {
   return words.map((w) => `"${w}"`).join(" ");
 }
 
-function searchFtsIds(query: string, limit: number, books?: readonly string[]): string[] {
+export function searchFtsIds(query: string, limit: number, books?: readonly string[]): string[] {
   const fts = toFtsQuery(query);
   if (!fts) return [];
   const sql = books
