@@ -119,6 +119,12 @@ Accepted 2026-09-30 20:25 after the relabel: vector 18/20 and hybrid 18/20, prod
 
 Marker 2.0 facts from `marker_single --help` (2026-09-30): tqdm bars are on by default, one per stage, with quiet gaps between stages. `--LayoutBuilder_mode` defaults to `fast` (rf-detr/onnx) on MPS and `balanced` (VLM) on GPU. `--disable_ocr` is the pure text-layer path with no VLM and no inference server, so it is the fast route for any PDF with a text layer. `--page_range 20-29` converts a 10-page probe that shows whether a text layer exists (output size) and how long the full book will take. A user run of about 20 minutes looked stuck, so the blocks now include a `pgrep`/`ps` watcher for a second tab, and `embed.ts` draws a bar with percent, elapsed and time left.
 
+### 8. Grokking shelf. Done
+
+Added 2026-10-08: the owner's DesignGurus course "Grokking the System Design Interview", 62 lessons (the 3 appendix pages are left out), as the book `grokking-system-design-interview` on its own shelf `grokking` with its own tool `search_grokking_knowledge`. The 65 saved HTML lessons were extracted to per-lesson Markdown and JSON under `data/grokking-sdi/` (the extractor lives there on purpose, gitignored, so the public repo never ships a paid-course scraper). `data/grokking-sdi/tools/assemble_book.py` then concatenates the lessons into `data/markdown/grokking-system-design-interview.md` with headings shifted so a chunk path reads course section > lesson > heading. Result: 611 chunks, average 233 tokens, 66 under 50 tokens, embedded in 122 s. A database backup from before the ingestion is `data/db/books.sqlite.bak-261008-0741`.
+
+Decision, the owner asked that the other content must not get poorer: a shelf of its own instead of the system-design shelf, so the existing tools never see these short, keyword-dense chunks. Vector search filters by book before ranking, so it cannot change. The FTS5 text index is table-wide though: BM25 uses the document counts of the whole table, so new rows nudge the text scores of every shelf. Measured with `src/snapshot.ts` on 70 queries against the two old shelves (the 20 golden questions plus 50 in `eval/guard-queries.jsonl`), before and after the ingestion: vector top-10 identical on 70/70 (largest score change 0), hybrid top-5 identical on 69/70, the one change swaps ranks 1 and 2 inside the same five chunks, text-search top-20 changed for 4 of 30 product queries and 2 of 40 system design queries. Eval: product 9/10 and system-design 9/10 unchanged, grokking 16/16 in both modes, with the expected lesson first in 15/16 (hybrid) and 16/16 (vector). If a later ingestion makes the drift visible, the fix is one FTS table per shelf, then a snapshot diff that must show zero changes.
+
 ## Commands
 
 ```bash
@@ -130,6 +136,8 @@ node src/ingest/chunk.ts [slug]
 node src/ingest/embed.ts [slug]          # step 3a
 node src/query.ts "question"             # step 3b, 3c
 node src/eval.ts                         # step 3d
+node src/snapshot.ts save <name>         # step 8, ranked ids for 70 queries; save before and after any change to the library
+node src/snapshot.ts diff <before> <after>
 ```
 
 ## Review log
