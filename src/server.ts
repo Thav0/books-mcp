@@ -25,6 +25,12 @@ const TOOLS: { name: string; shelf: Shelf; description: string }[] = [
     description:
       "Search the Grokking the System Design Interview course: the interview framework, back-of-the-envelope estimation, short glossary lessons (load balancing, caching, partitioning, indexes, CAP, consistent hashing, bloom filters, quorum, heartbeat), 'A versus B' trade-off lessons, and step by step designs of TinyURL, Pastebin, Instagram, Dropbox, Messenger, Twitter, YouTube, typeahead, API rate limiter, web crawler, news feed, Yelp, Uber and Ticketmaster. Returns the most relevant passages with course section, lesson and heading path. Use it for system design interview questions and when asked how this course approaches a design problem.",
   },
+  {
+    name: "search_typescript_knowledge",
+    shelf: "typescript",
+    description:
+      "Search a local library of JavaScript and TypeScript engineering books, backend (Node.js) and frontend. Returns the most relevant passages with book and chapter path. Use it whenever a question touches Node.js internals and patterns (event loop, modules, callbacks, promises, async/await, streams, design patterns, scaling and messaging in Node.js) or frontend architecture (design systems, pattern libraries, CSS architecture, frontend testing, style guides and documentation).",
+  },
 ];
 
 serveStdio(() => {

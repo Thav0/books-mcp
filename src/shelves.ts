@@ -11,6 +11,7 @@ export const SHELVES = {
     "building-evolutionary-architectures",
   ],
   grokking: ["grokking-system-design-interview"],
+  typescript: ["nodejs-design-patterns", "frontend-architecture-for-design-systems"],
 } as const;
 
 export type Shelf = keyof typeof SHELVES;
