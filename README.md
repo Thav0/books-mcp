@@ -101,7 +101,7 @@ node src/query.ts "your question" my-book
 
 The first `embed` run downloads the embedding model `nomic-embed-text-v1.5` (a few hundred MB) into the Hugging Face cache. Later runs work offline. Leave out the name to process every source.
 
-Last, put the source on a shelf. Open `src/shelves.ts` and add the slug to a shelf. For a new shelf, add an entry to `TOOLS` in `src/server.ts` as well, with a tool name and a description. The description tells the model when to call the tool, so write what the shelf covers. The shelves in the repo belong to the author's own library and are only an example, so replace them with yours.
+Last, put the source on a shelf. Open `src/shelves.ts`, add the slug to a shelf, and give it a title in `BOOKS`. The server sends those titles to every client in its instructions, so a Claude session in any project knows which sources exist before it searches, and `pnpm typecheck` fails while a slug has no title. For a new shelf, add an entry to `TOOLS` in `src/server.ts` as well, with a tool name and a description. The description tells the model when to call the tool, so write what the shelf covers. The shelves in the repo belong to the author's own library and are only an example, so replace them with yours.
 
 ## Use it from Claude Code
 

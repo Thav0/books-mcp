@@ -11,10 +11,31 @@ export const SHELVES = {
     "building-evolutionary-architectures",
   ],
   grokking: ["grokking-system-design-interview"],
-  typescript: ["nodejs-design-patterns", "frontend-architecture-for-design-systems"],
+  typescript: ["nodejs-design-patterns", "the-conscious-node", "frontend-architecture-for-design-systems"],
 } as const;
 
 export type Shelf = keyof typeof SHELVES;
+type Slug = (typeof SHELVES)[Shelf][number];
+
+// Human names for the MCP server instructions, so a client knows which books exist before it calls
+// a tool. The Record type makes typecheck fail when a shelf gains a slug without a title here.
+export const BOOKS: Record<Slug, string> = {
+  "shape-up": "Shape Up, Ryan Singer",
+  inspired: "Inspired, Marty Cagan",
+  "escaping-the-build-trap": "Escaping the Build Trap, Melissa Perri",
+  "continuous-discovery-habits": "Continuous Discovery Habits, Teresa Torres",
+  "lean-analytics": "Lean Analytics, Alistair Croll and Benjamin Yoskovitz (audiobook transcript)",
+  "system-design-interview": "System Design Interview, Alex Xu",
+  "designing-data-intensive-applications": "Designing Data-Intensive Applications, Martin Kleppmann",
+  "software-architecture-the-hard-parts": "Software Architecture: The Hard Parts, Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani",
+  "fundamentals-of-software-architecture": "Fundamentals of Software Architecture, Mark Richards and Neal Ford",
+  "building-evolutionary-architectures": "Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua",
+  "grokking-system-design-interview": "Grokking the System Design Interview, DesignGurus course (65 lessons)",
+  "nodejs-design-patterns": "Node.js Design Patterns, 3rd edition, Mario Casciaro and Luciano Mammino (2020)",
+  "the-conscious-node": "The Conscious Node (2026), production Node.js practices",
+  "frontend-architecture-for-design-systems":
+    "Frontend Architecture for Design Systems, Micah Godbolt (a third-party chapter summary with quizzes, not the full book)",
+};
 
 export function shelfOf(book: string): Shelf | undefined {
   return (Object.keys(SHELVES) as Shelf[]).find((shelf) => (SHELVES[shelf] as readonly string[]).includes(book));
