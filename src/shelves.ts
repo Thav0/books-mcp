@@ -12,6 +12,8 @@ export const SHELVES = {
   ],
   grokking: ["grokking-system-design-interview"],
   typescript: ["nodejs-design-patterns", "the-conscious-node", "frontend-architecture-for-design-systems"],
+  ai: ["the-ai-playbook", "ai-engineering"],
+  "inventory-pricing": ["inventory-optimization", "pricing-and-revenue-optimization"],
 } as const;
 
 export type Shelf = keyof typeof SHELVES;
@@ -35,6 +37,10 @@ export const BOOKS: Record<Slug, string> = {
   "the-conscious-node": "The Conscious Node (2026), production Node.js practices",
   "frontend-architecture-for-design-systems":
     "Frontend Architecture for Design Systems, Micah Godbolt (a third-party chapter summary with quizzes, not the full book)",
+  "the-ai-playbook": "The AI Playbook: Mastering the Rare Art of Machine Learning Deployment, Eric Siegel (2024)",
+  "ai-engineering": "AI Engineering: Building Applications with Foundation Models, Chip Huyen (2025)",
+  "inventory-optimization": "Inventory Optimization: Models and Simulations, Nicolas Vandeput (2020)",
+  "pricing-and-revenue-optimization": "Pricing and Revenue Optimization, 2nd edition, Robert L. Phillips (2021)",
 };
 
 export function shelfOf(book: string): Shelf | undefined {

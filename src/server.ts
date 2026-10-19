@@ -31,6 +31,18 @@ const TOOLS: { name: string; shelf: Shelf; description: string }[] = [
     description:
       "Search a local library of JavaScript and TypeScript engineering books, backend (Node.js) and frontend. Returns the most relevant passages with book and chapter path. Use it whenever a question touches Node.js internals and patterns (event loop, modules, callbacks, promises, async/await, streams, design patterns, scaling and messaging in Node.js), Node.js in production (project structure, error handling and logging, graceful shutdown, security, testing, API design, databases, performance, Docker and CI tooling) or frontend architecture (design systems, pattern libraries, CSS architecture, frontend testing, style guides and documentation).",
   },
+  {
+    name: "search_ai_knowledge",
+    shelf: "ai",
+    description:
+      "Search a local library of AI and machine learning books. Returns the most relevant passages with book and chapter path. Use it whenever a question touches building applications on foundation models and LLMs (evaluation methodology and AI as a judge, model selection and benchmarks, prompt engineering and prompt attacks, RAG and agents, finetuning and LoRA, dataset engineering, inference optimization, AI application architecture, guardrails and user feedback) or taking machine learning projects to deployment in a business (the BizML steps, the deployment goal and the prediction target, evaluation metrics such as lift and profit curves, data preparation, training, deployment and maintenance).",
+  },
+  {
+    name: "search_inventory_pricing_knowledge",
+    shelf: "inventory-pricing",
+    description:
+      "Search a local library of inventory management and pricing books. Returns the most relevant passages with book and chapter path. Use it whenever a question touches inventory policies (reorder point, order-up-to level, economic order quantity, lead times and review periods), safety stocks, service levels and fill rate, stochastic demand, cost and service level optimization, multi-echelon inventory, the newsvendor model and inventory simulation in Python, or pricing and revenue optimization (price-response functions and price elasticity, estimating price response, price optimization and price differentiation, pricing with constrained supply, revenue management, capacity allocation, network management, overbooking, markdowns, customized pricing and behavioral economics).",
+  },
 ];
 
 // Clients show these instructions at session start, even when they load the tool schemas lazily,
