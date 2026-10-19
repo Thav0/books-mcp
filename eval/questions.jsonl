@@ -34,3 +34,43 @@
 {"question": "design a web crawler that avoids fetching duplicate pages", "book": "grokking-system-design-interview", "heading": "web crawler"}
 {"question": "design ticket booking so two users cannot buy the same seat", "book": "grokking-system-design-interview", "heading": "ticketmaster"}
 {"question": "design a ride sharing backend that matches drivers and riders", "book": "grokking-system-design-interview", "heading": "uber"}
+{"question": "what are the six steps of the BizML practice", "book": "the-ai-playbook", "heading": "six steps"}
+{"question": "what is lift as a measure of model performance", "book": "the-ai-playbook", "heading": "lift"}
+{"question": "how do you draw a profit curve to decide how many cases to act on", "book": "the-ai-playbook", "heading": "profit curve"}
+{"question": "what is the difference between business metrics and model metrics", "book": "the-ai-playbook", "heading": "business metrics"}
+{"question": "how can a control group reduce the risk of deploying a model", "book": "the-ai-playbook", "heading": "control group"}
+{"question": "how do you pick your first machine learning project", "book": "the-ai-playbook", "heading": "first ml project"}
+{"question": "how do you staff the team for a machine learning project", "book": "the-ai-playbook", "heading": "staffing"}
+{"question": "how do you keep a model working after it is launched", "book": "the-ai-playbook", "heading": "maintaining the model"}
+{"question": "how do you use an AI model as a judge to evaluate another model's outputs and what are its limits", "book": "ai-engineering", "heading": "ai as a judge"}
+{"question": "what does perplexity measure in a language model", "book": "ai-engineering", "heading": "perplexity"}
+{"question": "how do prompt injection and jailbreaking attacks work and how can an application defend against them", "book": "ai-engineering", "heading": "defensive prompt engineering"}
+{"question": "when should I finetune a model and when is RAG the better choice", "book": "ai-engineering", "heading": "when to finetune"}
+{"question": "how do parameter-efficient finetuning methods like LoRA reduce the cost of finetuning", "book": "ai-engineering", "heading": "parameter-efficient"}
+{"question": "term-based versus embedding-based retrieval in a RAG system", "book": "ai-engineering", "heading": "retrieval algorithms"}
+{"question": "why do AI agents fail and how do you evaluate an agent", "book": "ai-engineering", "heading": "agent failure modes"}
+{"question": "which metrics describe inference performance such as time to first token and throughput", "book": "ai-engineering", "heading": "inference performance metrics"}
+{"question": "how should I deduplicate and clean a training dataset", "book": "ai-engineering", "heading": "data processing"}
+{"question": "how do temperature, top-k and top-p change the way a model samples tokens", "book": "ai-engineering", "heading": "sampling"}
+{"question": "what guardrails should an AI application put on its inputs and outputs", "book": "ai-engineering", "heading": "guardrails"}
+{"question": "how is AI engineering different from traditional ML engineering", "book": "ai-engineering", "heading": "versus ml engineering"}
+{"question": "how does a continuous review policy with a reorder point work", "book": "inventory-optimization", "heading": "continuous review"}
+{"question": "what is the economic order quantity and how is it derived", "book": "inventory-optimization", "heading": "how much should i order"}
+{"question": "how do I compute safety stock for a target service level", "book": "inventory-optimization", "heading": "safety stocks"}
+{"question": "what is the difference between cycle service level and fill rate", "book": "inventory-optimization", "heading": "fill rate"}
+{"question": "how does a stochastic lead time change the safety stock", "book": "inventory-optimization", "heading": "stochastic lead time"}
+{"question": "how to find the best order quantity for a perishable product with the newsvendor model", "book": "inventory-optimization", "heading": "newsvendor"}
+{"question": "what is multi-echelon inventory optimization and the guaranteed-service model", "book": "inventory-optimization", "heading": "multi-echelon"}
+{"question": "what to do when demand is not normally distributed, for example with a gamma distribution", "book": "inventory-optimization", "heading": "beyond normality"}
+{"question": "how to use kernel density estimation to model discrete demand", "book": "inventory-optimization", "heading": "kernel density"}
+{"question": "how to optimize inventory policy parameters with simulation", "book": "inventory-optimization", "heading": "simulation optimization"}
+{"question": "what is price elasticity and how is price sensitivity measured", "book": "pricing-and-revenue-optimization", "heading": "price sensitivity"}
+{"question": "what are common price-response functions such as linear, exponential and logit", "book": "pricing-and-revenue-optimization", "heading": "common price-response functions"}
+{"question": "how to estimate price response with A/B testing and randomized price tests", "book": "pricing-and-revenue-optimization", "heading": "data sources for price-response"}
+{"question": "what is Littlewood's rule for allocating capacity between two fare classes", "book": "pricing-and-revenue-optimization", "heading": "two-class problem"}
+{"question": "how do airlines decide how much to overbook a flight", "book": "pricing-and-revenue-optimization", "heading": "overbooking"}
+{"question": "how should a retailer plan markdowns for seasonal goods", "book": "pricing-and-revenue-optimization", "heading": "markdown"}
+{"question": "what are tactics for price differentiation like group pricing, couponing and versioning", "book": "pricing-and-revenue-optimization", "heading": "tactics for price differentiation"}
+{"question": "how do prospect theory and reference prices change how customers see a price", "book": "pricing-and-revenue-optimization", "heading": "price presentation and framing"}
+{"question": "how to price a customized bid when competing for a business deal", "book": "pricing-and-revenue-optimization", "heading": "customized pricing"}
+{"question": "cost-based versus market-based versus value-based pricing", "book": "pricing-and-revenue-optimization", "heading": "traditional approaches to pricing"}
