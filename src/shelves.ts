@@ -11,7 +11,18 @@ export const SHELVES = {
     "building-evolutionary-architectures",
   ],
   grokking: ["grokking-system-design-interview"],
-  typescript: ["nodejs-design-patterns", "the-conscious-node", "frontend-architecture-for-design-systems"],
+  // Node.js and frontend books share one shelf: the owner treats JavaScript and TypeScript work as one group.
+  typescript: [
+    "nodejs-design-patterns",
+    "the-conscious-node",
+    "frontend-architecture-for-design-systems",
+    "advanced-react",
+    "web-performance-fundamentals",
+    "building-large-scale-web-apps",
+    "building-micro-frontends",
+    "frontend-system-design-essentials",
+    "frontend-system-design-essentials-videos",
+  ],
   ai: ["the-ai-playbook", "ai-engineering"],
   "inventory-pricing": ["inventory-optimization", "pricing-and-revenue-optimization"],
 } as const;
@@ -41,6 +52,15 @@ export const BOOKS: Record<Slug, string> = {
   "ai-engineering": "AI Engineering: Building Applications with Foundation Models, Chip Huyen (2025)",
   "inventory-optimization": "Inventory Optimization: Models and Simulations, Nicolas Vandeput (2020)",
   "pricing-and-revenue-optimization": "Pricing and Revenue Optimization, 2nd edition, Robert L. Phillips (2021)",
+  "advanced-react": "Advanced React: Deep Dives, Investigations, Performance Patterns and Techniques, Nadia Makarevich (2023)",
+  "web-performance-fundamentals":
+    "Web Performance Fundamentals: A Frontend Developer's Guide to Profile and Optimize React Web Apps, Nadia Makarevich (2025)",
+  "building-large-scale-web-apps": "Building Large Scale Web Apps: A React Field Guide, Addy Osmani and Hassan Djirdeh (2024)",
+  "building-micro-frontends":
+    "Building Micro-Frontends: Distributed Systems for the Frontend, 2nd edition, Luca Mezzalira (2025)",
+  "frontend-system-design-essentials": "Frontend System Design Essentials, Juntao Qiu, the course book (22 chapters and 2 case studies)",
+  "frontend-system-design-essentials-videos":
+    "Frontend System Design Essentials, Juntao Qiu, the course videos (transcripts of 47 lessons)",
 };
 
 export function shelfOf(book: string): Shelf | undefined {

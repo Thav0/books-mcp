@@ -48,3 +48,18 @@
 {"query": "stakeholder management", "shelf": "product"}
 {"query": "product strategy and vision", "shelf": "product"}
 {"query": "circuit breaker and scope hammering in shaping", "shelf": "product"}
+{"query": "how does the Node.js event loop work", "shelf": "typescript"}
+{"query": "what is the reactor pattern in Node.js", "shelf": "typescript"}
+{"query": "how to handle backpressure when piping streams", "shelf": "typescript"}
+{"query": "CommonJS versus ES modules in Node.js", "shelf": "typescript"}
+{"query": "how to limit the concurrency of async tasks with promises", "shelf": "typescript"}
+{"query": "the observer pattern with EventEmitter", "shelf": "typescript"}
+{"query": "how to scale a Node.js application with the cluster module", "shelf": "typescript"}
+{"query": "how to implement graceful shutdown of a Node.js server", "shelf": "typescript"}
+{"query": "how to batch and cache identical async requests", "shelf": "typescript"}
+{"query": "how to cancel an asynchronous operation", "shelf": "typescript"}
+{"query": "how to run CPU-bound work without blocking the event loop", "shelf": "typescript"}
+{"query": "centralized error handling and structured logging in a Node.js API", "shelf": "typescript"}
+{"query": "how to structure the folders of a Node.js project", "shelf": "typescript"}
+{"query": "how to secure a Node.js API against common attacks", "shelf": "typescript"}
+{"query": "CSS architecture for a design system pattern library", "shelf": "typescript"}

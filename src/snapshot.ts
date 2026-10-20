@@ -5,10 +5,11 @@ import { SHELVES, shelfOf, type Shelf } from "./shelves.ts";
 
 // Ranking snapshot. Before a change to the library (a new book, a chunker tweak, a model swap) save the
 // ranked ids for a fixed set of queries, save again after, then diff. Only the guarded shelves are
-// searched, so adding a shelf never changes the query set. Ids and scores only, never book text.
+// searched, and the diff matches queries by shelf and text, so golden questions added between the two
+// saves are left out. Ids and scores only, never book text.
 //   node src/snapshot.ts save before
 //   node src/snapshot.ts diff before after
-const GUARDED: readonly Shelf[] = ["product", "system-design"];
+const GUARDED: readonly Shelf[] = ["product", "system-design", "typescript"];
 const ROOT = resolve(import.meta.dirname, "..");
 const DIR = resolve(ROOT, "data/snapshots");
 const TOP = 10;
@@ -55,33 +56,36 @@ const ids = (r: Ranked, n: number) => r.slice(0, n).map((h) => h.id);
 async function diff(beforeName: string, afterName: string): Promise<void> {
   const load = async (n: string) => JSON.parse(await readFile(resolve(DIR, `${n}.json`), "utf8")) as Item[];
   const [before, after] = [await load(beforeName), await load(afterName)];
-  if (before.length !== after.length) throw new Error(`query sets differ: ${before.length} vs ${after.length}`);
+  const key = (item: Item) => `${item.shelf}\n${item.query}`;
+  const afterByKey = new Map(after.map((a) => [key(a), a]));
+  const missing = before.filter((b) => !afterByKey.has(key(b))).length;
+  if (missing) throw new Error(`${missing} queries of ${beforeName} are missing from ${afterName}`);
 
   const rows = new Map<string, Record<string, number>>();
   const changed: string[] = [];
-  let maxVectorDrift = 0;
-  before.forEach((b, i) => {
-    const a = after[i]!;
-    const row = rows.get(b.shelf) ?? { queries: 0, vector10: 0, hybrid5: 0, hybrid10: 0, fts20: 0, fts5: 0 };
+  for (const b of before) {
+    const a = afterByKey.get(key(b))!;
+    const row = rows.get(b.shelf) ?? { queries: 0, vector10: 0, hybrid5: 0, hybrid10: 0, fts20: 0, fts5: 0, drift: 0 };
     row.queries! += 1;
     row.vector10! += same(ids(b.vector, TOP), ids(a.vector, TOP)) ? 1 : 0;
     row.hybrid5! += same(ids(b.hybrid, 5), ids(a.hybrid, 5)) ? 1 : 0;
     row.hybrid10! += same(ids(b.hybrid, TOP), ids(a.hybrid, TOP)) ? 1 : 0;
     row.fts20! += same(b.fts, a.fts) ? 1 : 0;
     row.fts5! += same(b.fts.slice(0, 5), a.fts.slice(0, 5)) ? 1 : 0;
+    b.vector.forEach((h, r) => (row.drift = Math.max(row.drift!, Math.abs(h.score - (a.vector[r]?.score ?? Infinity)))));
     rows.set(b.shelf, row);
-    b.vector.forEach((h, r) => (maxVectorDrift = Math.max(maxVectorDrift, Math.abs(h.score - (a.vector[r]?.score ?? Infinity)))));
     if (!same(ids(b.hybrid, 5), ids(a.hybrid, 5))) {
       changed.push(`  [${b.shelf}] "${b.query}"\n    before: ${ids(b.hybrid, 5).join(" ")}\n    after:  ${ids(a.hybrid, 5).join(" ")}`);
     }
-  });
+  }
 
   for (const [shelf, r] of rows) {
     console.log(
-      `${shelf}: ${r.queries} queries | identical vector top-10 ${r.vector10}, hybrid top-5 ${r.hybrid5}, hybrid top-10 ${r.hybrid10}, text-search top-5 ${r.fts5}, top-20 ${r.fts20}`,
+      `${shelf}: ${r.queries} queries | identical vector top-10 ${r.vector10}, hybrid top-5 ${r.hybrid5}, hybrid top-10 ${r.hybrid10}, text-search top-5 ${r.fts5}, top-20 ${r.fts20} | largest vector score change ${r.drift!.toExponential(2)}`,
     );
   }
-  console.log(`largest vector score change: ${maxVectorDrift.toExponential(2)}`);
+  const added = after.length - before.length;
+  if (added) console.log(`${added} queries only in ${afterName} (golden questions added since ${beforeName}) are not compared`);
   console.log(changed.length ? `hybrid top-5 changed for ${changed.length} queries:\n${changed.join("\n")}` : "hybrid top-5 identical for every query");
 }
 
