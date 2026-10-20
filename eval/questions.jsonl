@@ -74,3 +74,63 @@
 {"question": "how do prospect theory and reference prices change how customers see a price", "book": "pricing-and-revenue-optimization", "heading": "price presentation and framing"}
 {"question": "how to price a customized bid when competing for a business deal", "book": "pricing-and-revenue-optimization", "heading": "customized pricing"}
 {"question": "cost-based versus market-based versus value-based pricing", "book": "pricing-and-revenue-optimization", "heading": "traditional approaches to pricing"}
+{"question": "what is the big re-renders myth about props changes in React", "book": "advanced-react", "heading": "the big re-renders myth"}
+{"question": "why should you never define a component inside another component", "book": "advanced-react", "heading": "define components inside other components"}
+{"question": "how to split context providers to prevent unnecessary rerenders", "book": "advanced-react", "heading": "split providers"}
+{"question": "what is the difference between a ref and state in React", "book": "advanced-react", "heading": "difference between ref and state"}
+{"question": "how to expose an imperative API from a child component with useImperativeHandle", "book": "advanced-react", "heading": "useImperativeHandle"}
+{"question": "what is the stale closure problem in React and how do refs help escape it", "book": "advanced-react", "heading": "closure"}
+{"question": "why does the UI flicker with useEffect and when should I use useLayoutEffect", "book": "advanced-react", "heading": "useLayoutEffect"}
+{"question": "how does a stacking context break absolutely positioned modals and how do portals fix it", "book": "advanced-react", "heading": "stacking context"}
+{"question": "how to fix race conditions when fetching data in React", "book": "advanced-react", "heading": "race condition"}
+{"question": "how to catch async errors with an ErrorBoundary", "book": "advanced-react", "heading": "errorboundary"}
+{"question": "what is CrUX and how do I start measuring real user performance", "book": "web-performance-fundamentals", "heading": "crux"}
+{"question": "how do Cache-Control headers affect repeat visit performance", "book": "web-performance-fundamentals", "heading": "cache-control"}
+{"question": "how to read a flame graph in the Chrome DevTools performance panel", "book": "web-performance-fundamentals", "heading": "flame graph"}
+{"question": "how to measure Interaction to Next Paint (INP)", "book": "web-performance-fundamentals", "heading": "interaction to next paint"}
+{"question": "why can server-side rendering make LCP worse", "book": "web-performance-fundamentals", "heading": "ssr can make lcp worse"}
+{"question": "what is hydration and what does it cost after server rendering", "book": "web-performance-fundamentals", "heading": "hydration"}
+{"question": "what is tree shaking and why are some libraries not tree-shakable", "book": "web-performance-fundamentals", "heading": "tree"}
+{"question": "how to preload lazy-loaded chunks before the user navigates", "book": "web-performance-fundamentals", "heading": "preloading lazy chunks"}
+{"question": "how to break up long tasks with scheduler.yield to improve interactions", "book": "web-performance-fundamentals", "heading": "long tasks"}
+{"question": "what does the React Compiler do and what can it not catch", "book": "web-performance-fundamentals", "heading": "compiler"}
+{"question": "what is the Cynefin framework for finding the root causes of complexity", "book": "building-large-scale-web-apps", "heading": "cynefin"}
+{"question": "how to lazy-load a component when it scrolls into view with the Intersection Observer API", "book": "building-large-scale-web-apps", "heading": "intersection observer"}
+{"question": "what are the trade-offs of aggressive code-splitting", "book": "building-large-scale-web-apps", "heading": "aggressive code-splitting"}
+{"question": "what are design tokens and how are they used in a design system", "book": "building-large-scale-web-apps", "heading": "design tokens"}
+{"question": "how to handle plurals when internationalizing an app", "book": "building-large-scale-web-apps", "heading": "plurals"}
+{"question": "how to support right-to-left languages with CSS logical properties", "book": "building-large-scale-web-apps", "heading": "right-to-left"}
+{"question": "are barrel exports a good idea for organizing code", "book": "building-large-scale-web-apps", "heading": "barrel exports"}
+{"question": "what is the strangler application approach to a technical migration", "book": "building-large-scale-web-apps", "heading": "strangler"}
+{"question": "how to auto-generate TypeScript types from a GraphQL, REST or gRPC API", "book": "building-large-scale-web-apps", "heading": "auto-generating types"}
+{"question": "where do Kubernetes and Docker fit in a scalable web architecture", "book": "building-large-scale-web-apps", "heading": "kubernetes"}
+{"question": "what is the micro-frontend decision framework", "book": "building-micro-frontends", "heading": "decision framework"}
+{"question": "how to use domain-driven design bounded contexts to define micro-frontends", "book": "building-micro-frontends", "heading": "bounded context"}
+{"question": "vertical split versus horizontal split micro-frontend architectures", "book": "building-micro-frontends", "heading": "split"}
+{"question": "how does Module Federation work for client-side rendered micro-frontends", "book": "building-micro-frontends", "heading": "module federation"}
+{"question": "how do Next.js multi-zones compose server-side rendered micro-frontends", "book": "building-micro-frontends", "heading": "multi-zones"}
+{"question": "what is the frontend discovery schema for deploying micro-frontends", "book": "building-micro-frontends", "heading": "discovery schema"}
+{"question": "when should micro-frontends use the backend for frontend (BFF) pattern", "book": "building-micro-frontends", "heading": "bff"}
+{"question": "why is sharing state between micro-frontends an antipattern", "book": "building-micro-frontends", "heading": "sharing state"}
+{"question": "how should I plan an iterative migration from a monolith to micro-frontends", "book": "building-micro-frontends", "heading": "migrating to micro-frontends"}
+{"question": "how does Conway's law link team organization and software architecture", "book": "building-micro-frontends", "heading": "introducing micro-frontends in your organization"}
+{"question": "what is the CCDAO framework for frontend system design", "book": "frontend-system-design-essentials", "heading": "introducing the ccdao framework"}
+{"question": "how to design a typeahead search box in a frontend system design interview", "book": "frontend-system-design-essentials", "heading": "typeahead search box"}
+{"question": "how to design a scalable feed list", "book": "frontend-system-design-essentials", "heading": "scalable feed list"}
+{"question": "where should the entitlement rules of a sidebar live, in the frontend or the backend", "book": "frontend-system-design-essentials", "heading": "sidebar entitlements"}
+{"question": "how to transform nested API payloads into normalized flat tables in the frontend", "book": "frontend-system-design-essentials", "heading": "data normalization"}
+{"question": "what can frontend state learn from how databases reconstruct data", "book": "frontend-system-design-essentials", "heading": "backend databases"}
+{"question": "why does tree shaking stop at dynamic import boundaries", "book": "frontend-system-design-essentials", "heading": "tree shaking stops at dynamic boundaries"}
+{"question": "how to make WebSocket state updates idempotent to avoid duplicate cards", "book": "frontend-system-design-essentials", "heading": "idempotent"}
+{"question": "how do ETag and Last-Modified headers validate cached responses", "book": "frontend-system-design-essentials", "heading": "etag"}
+{"question": "how to make performance limits explicit with performance budgets", "book": "frontend-system-design-essentials", "heading": "budgets"}
+{"question": "how to cancel in-flight requests when the user keeps typing in a search box", "book": "frontend-system-design-essentials-videos", "heading": "request cancelation"}
+{"question": "cursor-based pagination versus infinite scrolling", "book": "frontend-system-design-essentials-videos", "heading": "infinite scrolling"}
+{"question": "real-time updates with server-sent events in practice", "book": "frontend-system-design-essentials-videos", "heading": "server-sent event"}
+{"question": "how to build an optimistic UI with rollback when the request fails", "book": "frontend-system-design-essentials-videos", "heading": "optimistic ui"}
+{"question": "how to implement a skeleton loading pattern in a board view", "book": "frontend-system-design-essentials-videos", "heading": "skeleton"}
+{"question": "how to prefetch data when the user shows intention, like hovering a card", "book": "frontend-system-design-essentials-videos", "heading": "prefetching data when user shows intention"}
+{"question": "what is cross-site scripting (XSS) and how does it reach a frontend app", "book": "frontend-system-design-essentials-videos", "heading": "xss"}
+{"question": "how to apply a content security policy (CSP) effectively", "book": "frontend-system-design-essentials-videos", "heading": "csp"}
+{"question": "what are the six pillars of frontend system design", "book": "frontend-system-design-essentials-videos", "heading": "six pillars"}
+{"question": "end-to-end testing a feature with Playwright", "book": "frontend-system-design-essentials-videos", "heading": "playwright"}
